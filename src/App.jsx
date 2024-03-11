@@ -12,7 +12,12 @@ export const App = () => {
         <div className="container pt-[20px]">
           <Card1 />
           {todoList?.map((item) => (
-            <UserCard key={item.id} name={item.name} surname={item.surname} />
+            <UserCard
+              key={item.id}
+              name={item.name}
+              surname={item.surname}
+              id={item.id}
+            />
           ))}
         </div>
       </div>

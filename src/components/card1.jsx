@@ -3,12 +3,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../redux/reducer/todo-reducer";
+import { render } from "react-dom";
+import { increment } from "../redux/reducer/count-reducer";
 
 export const Card1 = () => {
   const dispatch = useDispatch();
   const { register, reset, handleSubmit } = useForm();
   const submit = (data) => {
-    dispatch(addTodo({ ...data, id: nanoid() }));
+    dispatch(addTodo({ ...data, id: Date.now() }));
+    dispatch(increment());
     reset();
   };
 
